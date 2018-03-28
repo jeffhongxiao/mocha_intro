@@ -19,7 +19,7 @@ describe('suite', function() {
 
 describe('another suite', function() {
   it('should be a passing test', function() {
-    // foo.should.bar
+    // foo.should.equal(bar)
   });
 });
 

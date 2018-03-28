@@ -6,13 +6,11 @@ var should = chai.should();
 
 
 describe('foo', function() {
-  it.only('foo', function() {
-    // true.should.equal(true);
+  it('foo', function() {
+    this.skip();
   });
 });
 
 describe('bar', function() {
-  describe('bar', function() {
-    it.only('bar');
-  })
+  it('bar');
 });
