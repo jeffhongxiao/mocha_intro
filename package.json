@@ -1,0 +1,16 @@
+{
+  "name": "mocha_examples",
+  "version": "1.0.0",
+  "description": "examples for mocha",
+  "author": "Hong",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  }
+}
