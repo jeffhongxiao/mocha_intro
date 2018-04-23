@@ -30,21 +30,23 @@ describe('suite', function() {
 });
 
 describe('another suite', function() {
-  // test level
-  beforeEach('beforeEach', function() {
-    console.log('BEFORE each test');
-  });
+  describe('test case', function() {
+    // test level
+    beforeEach('beforeEach', function() {
+      console.log('BEFORE each test');
+    });
 
-  it('test', function() {
-    true.should.equal(true);
-  });
+    it.only('test', function() {
+      true.should.equal(true);
+    });
 
-  it('another test', function() {
-    true.should.equal(true);
-  });
+    it('another test', function() {
+      true.should.equal(true);
+    });
 
-  // test level
-  afterEach(function afterEach() {
-    console.log('AFTER each test');
+    // test level
+    afterEach(function afterEach() {
+      console.log('AFTER each test');
+    });
   });
 });
