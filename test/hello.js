@@ -14,12 +14,25 @@ describe('suite', function() {
 
       done();
     });
+
+    it('should return true is true', function(done) {
+      // intended to fail
+      true.should.equal(false);
+      done();
+    });
   });
 });
 
 describe('another suite', function() {
-  it('should be a passing test', function() {
-    // foo.should.equal(bar)
+  it('synchronous tests - no callback', function() {
+    true.should.equal(true);
+  });
+});
+
+describe('yet another suite', function() {
+  it('asynchronous tests - calls with done', function(done) {
+    true.should.equal(true);
+    done();
   });
 });
 
