@@ -12,6 +12,15 @@ describe('foo', function() {
   });
 });
 
+// suite level - DISABLED
+describe('foo2', function() {
+  this.timeout(0);
+
+  it('foo2', function(done) {
+    setTimeout(done, 3000);
+  });
+});
+
 // suite level
 describe('bar', function() {
   this.timeout(500);
