@@ -10,7 +10,7 @@ before(function() {
 });
 
 describe('suite', function() {
-  // suite level
+  // suite level? or test case level?
   before(function() {
     console.log('BEFORE test in current suite');
   });
@@ -31,12 +31,12 @@ describe('suite', function() {
 
 describe('another suite', function() {
   describe('test case', function() {
-    // test level
+    // test case level
     beforeEach('beforeEach', function() {
       console.log('BEFORE each test');
     });
 
-    it.only('test', function() {
+    it('test', function() {
       true.should.equal(true);
     });
 
@@ -47,6 +47,29 @@ describe('another suite', function() {
     // test level
     afterEach(function afterEach() {
       console.log('AFTER each test');
+    });
+  });
+});
+
+describe('yet another suite', function() {
+  // suite level
+  before(function() {
+    console.log('a before() in parent describe()');
+  });
+
+  describe('test case', function() {
+    it('test', function() {
+      true.should.equal(true);
+    });
+
+    it('another test', function() {
+      true.should.equal(true);
+    });
+  });
+
+  describe('another test case', function() {
+    it('yet another test', function() {
+      true.should.equal(true);
     });
   });
 });
