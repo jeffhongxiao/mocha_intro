@@ -10,7 +10,7 @@ before(function() {
 });
 
 describe('suite', function() {
-  // suite level? or test case level?
+  // suite level? or testcase level?
   before(function() {
     console.log('BEFORE test in current suite');
   });
@@ -30,8 +30,8 @@ describe('suite', function() {
 });
 
 describe('another suite', function() {
-  describe('test case', function() {
-    // test case level
+  describe('testcase', function() {
+    // testcase level
     beforeEach('beforeEach', function() {
       console.log('BEFORE each test');
     });
@@ -57,7 +57,7 @@ describe('yet another suite', function() {
     console.log('a before() in parent describe()');
   });
 
-  describe('test case', function() {
+  describe('testcase', function() {
     it('test', function() {
       true.should.equal(true);
     });
@@ -67,9 +67,47 @@ describe('yet another suite', function() {
     });
   });
 
-  describe('another test case', function() {
+  describe('another testcase', function() {
     it('yet another test', function() {
       true.should.equal(true);
+    });
+  });
+});
+
+describe('complicated suite', function() {
+  // suite level
+  before('suite level before()', function() {
+    console.log('suite level before()');
+  });
+
+  describe('testcase A', function() {
+    // testcase level
+    before('testcase level before()', function() {
+      console.log('testcase level before()');
+    });
+
+    it('test A1', function() {
+      true.should.equal(true);
+    });
+
+    it('test A2', function() {
+      true.should.equal(true);
+    });
+
+  });
+
+  describe('testcase B', function() {
+    it('test B1', function() {
+      true.should.equal(true);
+    });
+
+    it('test A2', function() {
+      true.should.equal(true);
+    });
+
+    // testcase level
+    afterEach('testcase level afterEach()', function() {
+      console.log('testcase level afterEach()');
     });
   });
 });
