@@ -101,7 +101,7 @@ describe('complicated suite', function() {
       true.should.equal(true);
     });
 
-    it('test A2', function() {
+    it('test B2', function() {
       true.should.equal(true);
     });
 
