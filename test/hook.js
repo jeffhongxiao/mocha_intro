@@ -9,10 +9,9 @@ before(function() {
   console.log('BEFORE every test in every file');
 });
 
-describe('suite', function() {
-  // suite level? or testcase level?
+describe('i consider this as testcase level (NOT suite level)', function() {
   before(function() {
-    console.log('BEFORE test in current suite');
+    console.log('BEFORE test for each test');
   });
 
   it('test1', function() {
