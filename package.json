@@ -11,6 +11,6 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000 --reporter=spec"
   }
 }
