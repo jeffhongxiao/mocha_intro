@@ -9,104 +9,29 @@ before(function() {
   console.log('BEFORE every test in every file');
 });
 
-describe('i consider this as testcase level (NOT suite level)', function() {
-  before(function() {
-    console.log('BEFORE test for each test');
-  });
-
-  it('test1', function() {
+describe('test suite is declared in "describe"', function() {
+  it('test is declared in "it"', function() {
     true.should.equal(true);
   });
 
-  it('test2', function() {
-    false.should.equal(false);
-  });
-
-  // suite level
-  after(function() {
-    console.log('AFTER test in current suite');
-  });
+  it('"test case" is the same thing as "test"', function() {
+    true.should.equal(true);
+  })
 });
 
-describe('another suite', function() {
-  describe('testcase', function() {
-    // testcase level
-    beforeEach('beforeEach', function() {
-      console.log('BEFORE each test');
-    });
-
-    it('test', function() {
-      true.should.equal(true);
-    });
-
-    it('another test', function() {
-      true.should.equal(true);
-    });
-
-    // test level
-    afterEach(function afterEach() {
-      console.log('AFTER each test');
+describe('a test suite', function() {
+  describe('another test suite inside', function() {
+    describe('yet another test suite', function() {
+      describe('we can nest as many test suites as we want', function() {
+        it('a test', function() {
+          true.should.equal(true);
+        });
+      })
     });
   });
 });
 
-describe('yet another suite', function() {
-  // suite level
-  before(function() {
-    console.log('a before() in parent describe()');
-  });
-
-  describe('testcase', function() {
-    it('test', function() {
-      true.should.equal(true);
-    });
-
-    it('another test', function() {
-      true.should.equal(true);
-    });
-  });
-
-  describe('another testcase', function() {
-    it('yet another test', function() {
-      true.should.equal(true);
-    });
-  });
-});
-
-describe('complicated suite', function() {
-  // suite level
-  before('suite level before()', function() {
-    console.log('suite level before()');
-  });
-
-  describe('testcase A', function() {
-    // testcase level
-    before('testcase level before()', function() {
-      console.log('testcase level before()');
-    });
-
-    it('test A1', function() {
-      true.should.equal(true);
-    });
-
-    it('test A2', function() {
-      true.should.equal(true);
-    });
-
-  });
-
-  describe('testcase B', function() {
-    it('test B1', function() {
-      true.should.equal(true);
-    });
-
-    it('test B2', function() {
-      true.should.equal(true);
-    });
-
-    // testcase level
-    afterEach('testcase level afterEach()', function() {
-      console.log('testcase level afterEach()');
-    });
-  });
-});
+// global
+after(function() {
+  console.log('AFTER every test in every file');
+})
